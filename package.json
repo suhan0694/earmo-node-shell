@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/suhan0694/earmo-node-shell#readme",
   "dependencies": {
-    "line-replace": "^1.0.3"
+    "copy-dir": "^1.2.0",
+    "line-replace": "^1.0.3",
+    "mv": "^2.1.1",
+    "prompt-sync": "^4.2.0"
   }
 }

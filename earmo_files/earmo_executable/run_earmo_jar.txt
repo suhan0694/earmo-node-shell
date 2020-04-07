@@ -1,0 +1,32 @@
+How to configure EARMO jar executable file based on the sample .prop configuration file
+
+First, it is important to mentioned that we use dex2jar tool in order to extract the java source code from a *.apk file (Android app).
+
+
+Replace <p> in pathProjecttoAnalize key to the path of the jar file extracted using dex2jar tool
+Example: /your_folder/air.air.air.com.tabc.gsn-2014_5_11-dex2jar/air.air.air.com.tabc.gsn-2014_5_11-dex2jar/air.air.air.com.tabc.gsn-2014_5_11-dex2jar.jar
+
+
+Replace <q> in outputDirectory key to the path where you want to store the results of the optimization process
+
+Change generateFromSourceCode=0 to generateFromSourceCode=2 for analysin the .jar files.
+0 only works for .class files (extracting the content of the jar file to a new folder)
+
+
+Set independentRuns=5, where 5 is  the number of independent execution runs you want to peform
+
+
+You can select the type of anti-patterns you want to use to generate the sequence of refactorings:
+
+detectedAntipatterns=LargeClassLowCohesion,Blob,RefusedParentBequest,LazyClass,LongParameterList,SpaghettiCode,SpeculativeGenerality,BindingResources2Early,ReleasingResources2Late,InternalGetterAndSettersAndroid,HashMapUsageAndroid
+
+*Note that the last 4 types mentioned above are energy smells.
+
+Set androidEnergyDeltas= with the path to the "Deltas of energy consumption by refactoring type file"
+Example:  deltas.txt
+
+Replace <energyOr> with the path that contains the orginal App energy usage in Joules, expressed in double format.  For example E0.txt with the measurement 21.28127 in the first line for Android calculator.
+
+**We provided a file with E0 for the 13 apps validated (Table 14), called E0_forTable_14.txt
+
+

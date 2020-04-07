@@ -1,0 +1,13 @@
+calculator	21.28127
+gltron	256.4425
+kindmind	18.71595
+monsterhunter	16.06963
+oddscalculator	30.60512
+quicksnap	15.32712
+SASAbus	4.60739
+scrabble	94.56235
+soundmanager	1.955851
+stk	252.8053
+sudowars	12.02579
+tapsoffire	6.795679
+words	37.32413
