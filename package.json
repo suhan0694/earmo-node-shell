@@ -1,0 +1,28 @@
+{
+  "name": "earmo-node-shell",
+  "version": "1.0.0",
+  "description": "Node script to automate EARMO execution",
+  "main": "src/App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/App"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suhan0694/earmo-node-shell.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Android",
+    "Refactoring"
+  ],
+  "author": "Suhan Nath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suhan0694/earmo-node-shell/issues"
+  },
+  "homepage": "https://github.com/suhan0694/earmo-node-shell#readme",
+  "dependencies": {
+    "line-replace": "^1.0.3"
+  }
+}

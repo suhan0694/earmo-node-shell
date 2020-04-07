@@ -1,0 +1,40 @@
+pathProjecttoAnalize  = <p>
+##/CH/ifa/draw
+Answer to the Ultimate Question of Life, the Universe, and Everything else.
+maxEvaluations =1000
+initialSizeRefactoringSequence =0
+##329
+crossOverProbability=0.8
+mutationProbability=0.8
+maxTimeExecutionMs=0
+qmood =0
+
+#modes 0 class files; 1 java files; 2 jar files
+generateFromSourceCode=0
+
+
+generateAllRefOpp=1
+initialcountAntipatterns=1
+copyRelevantDirs=0
+#for linux to fix the problem of Wilcoxon R files with wrong path
+#ResultsTesting/
+outputDirectory = <q>
+#./ResultsTesting/
+Trace=1
+Threads=1
+initialSizeRefactoringSequencePerc=50
+independentRuns=5
+
+## Joules expresed in double format.  This value has to be >0 if not the Energy usage of an app will be 0
+
+originalAppEnergyUsage=<energyOr>
+
+detectedAntipatterns=LargeClassLowCohesion,Blob,RefusedParentBequest,LazyClass,LongParameterList,SpaghettiCode,SpeculativeGenerality,BindingResources2Early,ReleasingResources2Late,InternalGetterAndSettersAndroid,HashMapUsageAndroid
+
+
+
+
+
+#RefusedParentBequest,LazyClass,LongParameterList,SpaghettiCode,LargeClassLowCohesion,Blob,SpeculativeGenerality,BindingResources2Early,ReleasingResources2Late,InternalGetterAndSettersAndroid,HashMapUsageAndroid
+
+androidEnergyDeltas=/home-students/rmorales/repositoryMetaheur/androidEnergyDeltas/deltas.txt
