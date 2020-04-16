@@ -21,8 +21,27 @@ const copyEarmoFolder = new Promise((resolve, reject) => {
   );
 });
 
+const runBatchFiles = new Promise((resolve, reject) => {
+  var bat = require.resolve("../earmo_files/dex2jar-2.0/d2j-dex2jar.bat");
+  var apk = require.resolve("../earmo_files/dex2jar-2.0/ensichat_17.apk");
+  var ls = spawn(bat, [apk]);
+
+  ls.stdout.on("data", (data) => {
+    console.log(data.toString());
+  });
+
+  ls.stderr.on("data", (data) => {
+    console.error(data.toString());
+  });
+
+  ls.on("exit", (code) => {
+    return resolve(`Child exited with code ${code}`);
+  });
+});
+
 const callAutomator = async () => {
-  return (earmoMvresp = await copyEarmoFolder);
+  const earmoMvresp = await copyEarmoFolder;
+  const runBtcFiles = await runBatchFiles;
 };
 
 callAutomator()
@@ -32,22 +51,6 @@ callAutomator()
   .catch((error) => {
     console.log(error);
   });
-
-// var bat = require.resolve("../earmo_files/dex2jar-2.0/d2j-dex2jar.bat");
-// var apk = require.resolve("../earmo_files/dex2jar-2.0/ensichat_17.apk");
-// var ls = spawn(bat, [apk]);
-
-// ls.stdout.on("data", (data) => {
-//   console.log(data.toString());
-// });
-
-// ls.stderr.on("data", (data) => {
-//   console.error(data.toString());
-// });
-
-// ls.on("exit", (code) => {
-//   console.log(`Child exited with code ${code}`);
-// });
 
 // const independentRuns = prompt("Number of independent runs: ");
 
