@@ -23,11 +23,11 @@ outputDirectory = Output
 Trace=1
 Threads=1
 initialSizeRefactoringSequencePerc=50
-independentRuns=4
+independentRuns=2
 
 ## Joules expresed in double format.  This value has to be >0 if not the Energy usage of an app will be 0
 
-originalAppEnergyUsage=45
+originalAppEnergyUsage=21
 
 detectedAntipatterns=LargeClassLowCohesion,Blob,RefusedParentBequest,LazyClass,LongParameterList,SpaghettiCode,SpeculativeGenerality,BindingResources2Early,ReleasingResources2Late,InternalGetterAndSettersAndroid,HashMapUsageAndroid
 
