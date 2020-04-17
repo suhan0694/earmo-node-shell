@@ -4,6 +4,7 @@ const lineReplace = require("line-replace");
 const prompt = require("prompt-sync")({ sigint: true });
 const copydir = require("copy-dir");
 const mv = require("mv");
+const child_process = require("child_process");
 
 const copyEarmoFolderFunc = () => {
   const copyEarmoFolder = new Promise((resolve, reject) => {
@@ -41,6 +42,7 @@ const runBatchFilesFunc = () => {
 
     ls.on("exit", (code) => {
       console.log(`Child exited with code ${code}`);
+      return resolve("Jar successfully created");
     });
   });
 
@@ -83,13 +85,32 @@ const getEOValueFunc = () => {
   return getEOValue;
 };
 
+const getApkNameFunc = () => {
+  const getApkName = new Promise((resolve, reject) => {
+    const apk = prompt("Enter APK name: ");
+
+    lineReplace({
+      file: "./RefactoringStandarStudyAndroid.prop",
+      line: 1,
+      text: `pathProjecttoAnalize  = ${apk}-dex2jar.jar`,
+      addNewLine: true,
+      callback: ({ file, line, text, replacedText }) => {
+        return resolve("Entered" + apk);
+      },
+    });
+  });
+
+  return getApkName;
+};
+
 const moveJarFileFunc = () => {
   const moveJarFile = new Promise((resolve, reject) => {
     mv(
       "./ensichat_17-dex2jar.jar",
       "./Output/earmo_executable/ensichat_17-dex2jar.jar",
       function (err) {
-        return reject("Moving jar file" + err);
+        if (err) return reject("Moving jar file" + err);
+        console.log("Moved Jar file to Output");
       }
     );
   });
@@ -97,26 +118,28 @@ const moveJarFileFunc = () => {
 };
 
 const movePropFileFunc = () => {
-  const movePropFile = new Promise((resolve, reject) => {
-    fs.copyFile(
-      "./RefactoringStandarStudyAndroid.prop",
-      "./Output/earmo_executable/RefactoringStandarStudyAndroid.prop",
-      function (error) {
-        return reject(console.log(error));
-      }
-    );
-  });
-
+  const movePropFile = fs.copyFile(
+    "./RefactoringStandarStudyAndroid.prop",
+    "./Output/earmo_executable/RefactoringStandarStudyAndroid.prop",
+    (error) => {
+      if (error) throw error;
+      console.log("Prop File copied to Output");
+      console.log("Running Earmo Study");
+      child_process.execSync("cd Output/earmo_executable/ && testingStudy.sh");
+    }
+  );
   return movePropFile;
 };
 
 const callAutomator = async () => {
   const getIdptRunsCount = await getIndependentRunsCountFunc();
   const getEOVal = await getEOValueFunc();
+  const getApkName = await getApkNameFunc();
   const earmoMvresp = await copyEarmoFolderFunc();
-  const mvJarFile = await moveJarFileFunc();
   const mvPropFile = await movePropFileFunc();
   const runBtcFiles = await runBatchFilesFunc();
+  console.log(runBtcFiles);
+  const mvJarFile = await moveJarFileFunc();
 };
 
 callAutomator()
