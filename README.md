@@ -5,14 +5,16 @@ Paste your APK in the root folder.
 
 Open Terminal and run `npm run start`
 
-Choose your OS, enter your APK name (not implemented), Independent Runs, EO value.
+Choose your OS (Not implemented, Works only on windows), Enter Independent Runs, EO value, your APK name.
 
 Earmo will run in a folder named Output.
+You can track the progress of the EARMO study in Output/earmo_exectuable/output.txt file.
 
 TODO:
-* Make the script work asynchronously using promises.
-* Currently only working on Windows.
-* Call testingStudy.sh from script
+* Make the script work asynchronously using promises. ✔️
+* Work on both Windows and Linus. ❌
+* Call testingStudy.sh from script ✔️
+* Tail the log file on the cmd window. ❌
 
 
 
