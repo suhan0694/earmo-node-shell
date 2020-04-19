@@ -6,6 +6,8 @@ const copydir = require("copy-dir");
 const mv = require("mv");
 const child_process = require("child_process");
 
+var apkName = "";
+
 const copyEarmoFolderFunc = () => {
   const copyEarmoFolder = new Promise((resolve, reject) => {
     copydir(
@@ -29,7 +31,7 @@ const copyEarmoFolderFunc = () => {
 const runBatchFilesFunc = () => {
   const runBatchFiles = new Promise((resolve, reject) => {
     var bat = require.resolve("../earmo_files/dex2jar-2.0/d2j-dex2jar.bat");
-    var apk = require.resolve("../earmo_files/dex2jar-2.0/ensichat_17.apk");
+    var apk = require.resolve(`../${apkName}.apk`);
     var ls = spawn(bat, [apk]);
 
     ls.stdout.on("data", (data) => {
@@ -87,15 +89,15 @@ const getEOValueFunc = () => {
 
 const getApkNameFunc = () => {
   const getApkName = new Promise((resolve, reject) => {
-    const apk = prompt("Enter APK name: ");
+    apkName = prompt("Enter APK name: ");
 
     lineReplace({
       file: "./RefactoringStandarStudyAndroid.prop",
       line: 1,
-      text: `pathProjecttoAnalize  = ${apk}-dex2jar.jar`,
+      text: `pathProjecttoAnalize  = ${apkName}-dex2jar.jar`,
       addNewLine: true,
       callback: ({ file, line, text, replacedText }) => {
-        return resolve("Entered" + apk);
+        return resolve("Entered" + apkName);
       },
     });
   });
@@ -106,8 +108,8 @@ const getApkNameFunc = () => {
 const moveJarFileFunc = () => {
   const moveJarFile = new Promise((resolve, reject) => {
     mv(
-      "./ensichat_17-dex2jar.jar",
-      "./Output/earmo_executable/ensichat_17-dex2jar.jar",
+      `./${apkName}-dex2jar.jar`,
+      `./Output/earmo_executable/${apkName}-dex2jar.jar`,
       function (err) {
         if (err) return reject("Moving jar file" + err);
         console.log("Moved Jar file to Output");
