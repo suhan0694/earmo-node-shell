@@ -12,7 +12,7 @@ You can track the progress of the EARMO study in Output/earmo_exectuable/output.
 
 TODO:
 * Make the script work asynchronously using promises. ✔️
-* Work on both Windows and Linus. ❌
+* Work on both Windows and Linux. ❌
 * Call testingStudy.sh from script ✔️
 * Tail the log file on the cmd window. ❌
 
