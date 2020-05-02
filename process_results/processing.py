@@ -48,7 +48,7 @@ def processFiles():
         writer.writerow(dict1)
 
 def main():
-    appname=sys.argv[0]
+    appname=sys.argv[1]
     processFiles()
 
 
