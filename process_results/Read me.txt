@@ -1,0 +1,25 @@
+The file 'processing.py' has a variable called 'parameter'.
+As per our project, it is 2 or 3.
+Modify it as per your need
+
+To get results for all apps for n=2 :
+
+place the file in folder of the app that has results for n=2.
+Run the file using python  as 'python processing.py <appname>'
+A file called 2.csv gets created.
+Open it and check if the record has been inserted properly.
+
+Next, copy 2.csv and processing.py to results of next app.
+Run the file as described above.
+Next, copy 2.csv and processing.py to results of next app and so on.
+
+
+To get results for all apps for n=3:
+
+change the 'parameter' variable to 3.
+
+Follow the steps that you followed for n=2.
+
+
+
+
