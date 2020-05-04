@@ -11,6 +11,7 @@ Earmo will run in a folder named Output.
 You can track the progress of the EARMO study in Output/earmo_exectuable/output.txt file.
 
 To analyse your results follow the below steps:
+
 The file process_results/processing.py has a variable called 'parameter'.
 
 Enter your number of runs here.
