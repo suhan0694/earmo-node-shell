@@ -10,6 +10,21 @@ Choose your OS (Not implemented, Works only on windows), Enter Independent Runs,
 Earmo will run in a folder named Output.
 You can track the progress of the EARMO study in Output/earmo_exectuable/output.txt file.
 
+To analyse your results follow the below steps:
+The file process_results/processing.py has a variable called 'parameter'.
+
+Enter your number of runs here.
+
+Place the file in folder of the app that has results for n.
+Run the file using python  as `python processing.py <appname>`
+A file called n.csv gets created.
+
+Open it and check if the record has been inserted properly.
+
+Next, copy n.csv and processing.py to results of next app.
+
+Run the file as described above.
+
 TODO:
 * Make the script work asynchronously using promises. ✔️
 * Work on both Windows and Linux. ❌
