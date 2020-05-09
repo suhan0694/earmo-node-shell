@@ -1,0 +1,62 @@
+Total apps : 60
+APK Versions year : 2015-2017
+
+Mycontacts
+Uberspot
+Geometerplus
+Listmyapps
+SoundManager
+Scrabble
+Speedo
+Sasabus
+Ringdroid
+Saymytexts
+Minilens
+Hostseditor
+Unixtimeclockwidget
+Applicationsinfo
+Fdroid privileged
+Amdroid
+Android token
+Apollo
+Binuaral beats
+Bitclock 16
+Boilr
+Catalog
+Character recognition
+Cryptfs password
+Daily Money
+FBreader
+Flashback
+Free speech
+HN
+Tryton
+ShoLi
+SimpleDO
+AlarmClock
+AttendanceViewer
+Calculator
+KindMind
+LesserPad
+STK Addon
+Summation
+SW Journal
+TickMate
+ToDo
+Bodhi Timer
+Easy Token
+Expr Eval
+Simple light
+SimplyDo
+WordPowerMadeEasy
+LittleEcho
+NF Card
+Preference Manager
+BirthDroid
+Easy RSS
+Fake Dawn
+Hangar
+MPDroid
+Sudowars
+MatrixCalc
+Cardgamescore
